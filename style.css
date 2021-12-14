@@ -1,0 +1,166 @@
+body {
+    background-image: url(https://images.ru.prom.st/313489782_w640_h640_flizelinovye-fotooboi-derevya.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.Navigation
+{
+
+    background: #790000;
+    width: 80vw;
+    height: 10vh;
+    margin-left: 10vw;
+    text-align: center;
+    border: solid white;
+
+}
+
+.Link
+{
+    margin: 1.25vw;
+    display: inline-block;
+}
+a {
+    color:white
+}
+a:visited
+{
+    color:white
+}
+
+.Content {
+    background: url(https://forpost-sz.ru/sites/default/files/doc/2018/01/01/nrpngao.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+    display: block;
+    width: 80vw;
+    height: 90vh;
+    margin-left: 10vw;
+    overflow: scroll;
+}
+
+.Image_of_Legend
+{
+    position: relative;
+    margin: 2vw;
+    display: inline-block;
+    float: left;
+    width: 15vw;
+    height: 20vh;
+    border:solid;
+}
+img
+{
+    box-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #ffffff,
+            0 0 82px #ffffff;
+
+}
+.Way_of_Legend
+{
+    color: white;
+    position: relative;
+    font-size: 20px ;
+    margin: 2vw;
+    display: inline-block;
+    float: left;
+    height: 30vh;
+    width: 55vw;
+}
+
+article {
+
+    margin: 5px;
+}
+
+.Information {
+
+    display: inline-block;
+
+    text-align: center;
+    font-size: 30px;
+
+    width: 60vw;
+
+}
+.SongBox
+{
+    background: black;
+    margin-left: 30%;
+    color: white;
+    border: solid white;
+    width: 30vw;
+
+    height: auto;
+}
+
+.SongText
+{
+
+    font-size: 24px;
+    margin: 15%;
+    margin-right: 3.5%;
+    width: 20vw;
+    text-align: center;
+
+}
+
+.Information:hover
+{
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #ff0000,
+            0 0 82px #ff0000,
+            0 0 92px #ff0000,
+            0 0 102px #ff0000,
+            0 0 151px #ff0000;
+}
+
+.Songs
+{
+
+    color: white;
+
+    margin-top: 2.5%;
+    float: right;
+    display: inline-block;
+
+    text-align: left;
+    font-size: 30px;
+
+    width: 15vw;
+    height: 80vh;
+}
+.Songs:hover
+{
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #ff0000,
+            0 0 82px #ff0000,
+            0 0 92px #ff0000,
+            0 0 102px #ff0000,
+            0 0 151px #ff0000;
+}
+
+li:hover
+{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1800px) {
+    .Image_of_Legend{
+        display: none;
+    }
+
+}
