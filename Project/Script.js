@@ -1,10 +1,16 @@
+
+
 window.startTime = (new Date).getTime();
 window.onload = function () {
     console.log((new Date).getTime() - window.startTime);
 }
 var Songs = new Map();
 
+
+
 window.addEventListener('load',function () {
+
+
 
     let timer = ((new Date).getTime() - window.startTime)/1000
     document.getElementById("timer").innerHTML= "Load time: "+timer+"c";
@@ -29,6 +35,7 @@ window.addEventListener('load',function () {
 
     }
 
+
 },false)
 
 
@@ -46,8 +53,8 @@ function choose_song(song_name)
     if (Songs.get(song_name) != null)
     {
         document.getElementById('SongName').innerHTML = song_name
-        document.getElementById('SongAudio').src = "music/" + song_name + ".mp3"
-        document.getElementById('SongText').innerHTML = Songs.get(song_name)
+        document.getElementById('SongAudio').src = Songs.get(song_name)[0]
+        document.getElementById('SongText').innerHTML = Songs.get(song_name)[1]
 
     }
     else
@@ -60,7 +67,8 @@ function choose_song(song_name)
 
 function SongsSet()
 {
-    Songs.set("Всё идёт по плану",
+    Songs.set("Всё идёт по плану", [
+        'https://docs.google.com/uc?id=1MJz3Nf0zhecDOR03UWgN3ppnRw6OgdIH',
 
         "<p>Границы ключ переломлен пополам,\n" +
         "А наш батюшка Ленин совсем усоп,\n" +
@@ -104,9 +112,10 @@ function SongsSet()
         "Я проснулся среди ночи и понял, что\n</p>" +
         "\n" +
         "<p>Всё идет по плану ...\n" +
-        "Всё идет по плану ...</p>")
+        "Всё идет по плану ...</p>"])
 
-    Songs.set("Всё как у людей",
+    Songs.set("Всё как у людей", [
+        'https://docs.google.com/uc?id=1iN9KJ1zu1cyqC9vfOdClHGgyxudKhjG-',
         "<p>Вот и всё что было-\n" +
         "Не было и нету.\n" +
         "Все слои размокли.  \n" +
@@ -133,8 +142,9 @@ function SongsSet()
         "Правильно и ясно. \n" +
         "Здорово и вечно.\n</p>" +
         "   \n" +
-        "           Всё как у людей.")
-    Songs.set("Долгая счастливая жизнь",
+        "           Всё как у людей."])
+    Songs.set("Долгая счастливая жизнь", [
+        'https://docs.google.com/uc?id=1D0xg0NU8_bVxzSs-Z0lPYD4rjMOLHcUT',
         "<p>Потрясениям и праздникам-нет \n" +
         "Горизонтам и праздникам-нет\n" +
         "Вдохновениям и праздникам-нет,нет,нет,нет\n" +
@@ -162,8 +172,9 @@ function SongsSet()
         "Исключениям и праздникам-нет,нет,нет.\n" +
         "         На семи продувных сквозняках\n" +
         "         По болотам,по пустыням,степям\n" +
-        "         По сугробам,по грязи,по земле</p>")
-    Songs.set("Зоопарк",
+        "         По сугробам,по грязи,по земле</p>"])
+    Songs.set("Зоопарк",[
+        'https://docs.google.com/uc?id=1fYHj8zkS6P8e2DkCA2bNfXCfwvWchNri',
         "<p>Hе надо помнить-не надо ждать\n" +
         "Hе надо верить-не надо лгать\n" +
         "Hе надо падать-не надо бить\n" +
@@ -204,8 +215,9 @@ function SongsSet()
         "       Мы уйдём отсюда прочь,\n" +
         "         мы уйдём отсюда в ночь-\n</p>" +
         "         \n" +
-        "           <p>МЫ УЙДЁМ ИЗ ЗООПАРКА!</p>")
-    Songs.set("Моя оборона",
+        "           <p>МЫ УЙДЁМ ИЗ ЗООПАРКА!</p>"])
+    Songs.set("Моя оборона", [
+        'https://docs.google.com/uc?id=11pmh576xQe_QtuU36xqB7QXD4wtaSBJJ',
         "<p>Пластмассовый мир победил\n" +
         "Макет оказался сильней\n" +
         "Последний кораблик остыл\n" +
@@ -239,8 +251,9 @@ function SongsSet()
         "          Оо- моя оборона\n" +
         "          Солнечный зайчик стеклянного глаза.\n</p>" +
         "\n" +
-        "          Оо- моя оборона!")
-    Songs.set("Пой, революция!",
+        "          Оо- моя оборона!"])
+    Songs.set("Пой, революция!",[
+        'https://docs.google.com/uc?id=149flkl1YvfgOSLjWP0T7LZs5tKRRZFp-',
         "<p>В поле дождик бродил живой\n" +
         "Ковылял по щекам ледяным\n" +
         "Поднимал в последний неравный бой\n" +
@@ -269,8 +282,9 @@ function SongsSet()
         "                  Пуля манит\n" +
         "                  Небо поёт \n" +
         "                  В небе пылает песня\n" +
-        "                  Пой,революция!</p>")
-    Songs.set("Про дурачка",
+        "                  Пой,революция!</p>"])
+    Songs.set("Про дурачка",[
+        'https://docs.google.com/uc?id=1VJCKkRvjhVP9y6TGUbDuRvhkbanHEYRL',
         "<p>Ходит дурачок по лесу\n" +
         "Ищет дурачок глупее себя\n</p>" +
         "\n" +
@@ -316,9 +330,10 @@ function SongsSet()
         "                         Ищет дурачок глупее себя\n</p>" +
         "\n" +
         "<p>Ходит дурачок по лесу\n" +
-        "Ищет дурачок глупее себя</p>")
+        "Ищет дурачок глупее себя</p>"])
 
-    Songs.set("Самоотвод",
+    Songs.set("Самоотвод",[
+        'https://docs.google.com/uc?id=1A3cUvwJpVBJ9_LHhbXrTTQGGdjDe7PPX',
         "<p>Маяковский видел сон\n" +
         "В смутном поле зреет рис\n" +
         "В хищной чаще зреет зверь\n" +
@@ -347,8 +362,9 @@ function SongsSet()
         "     <p>Под нейтральным небом\n" +
         "     Под нейтральным флагом \n</p>" +
         "\n" +
-        "         Самоотвод")
-    Songs.set("Свобода",
+        "         Самоотвод"])
+    Songs.set("Свобода",[
+        'https://docs.google.com/uc?id=1A4P8TEVHIA6Ab3-pZkS6m8EOSFRCAg9m',
         "<p>Как платил Незнайка за свои вопросы\n" +
         "Что скрывал последний злой патрон\n" +
         "И чему посмеивался Санька Матросов\n" +
@@ -367,8 +383,9 @@ function SongsSet()
         "<p>-Это знает моя Свобода\n" +
         "-Это знает моя Свобода\n" +
         "-Это знает моё Поражение\n" +
-        "-Это знает моё Торжество!</p>")
-    Songs.set("Сияние",
+        "-Это знает моё Торжество!</p>"])
+    Songs.set("Сияние",[
+        'https://docs.google.com/uc?id=1-mzIUTNH-zpBoEsJ4XvB-ylgi1AFDkdK',
         "<p>Спят леса и селения\n" +
         "Небеса и сомнения\n</p>" +
         "        \n" +
@@ -387,7 +404,7 @@ function SongsSet()
         "     <p>Но сиянье обрушится вниз\n" +
         "     Станет твоей землёй\n" +
         "     Но сиянье обрушится вниз\n" +
-        "     Станет самим тобой.</p>")
+        "     Станет самим тобой.</p>"])
 
 }
 
