@@ -6,18 +6,33 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css">
     <title>Пластмассовый мир победил...</title>
     <script src="Script.js"></script>
-</head>
-<body>
-<div class = "Main">
     <div class="Navigation">
-        <a class = "Link" href="./index.html"><h1>Песни</h1></a>
-        <a class = "Link" href="./Actor.html"><h1>Исполнитель</h1></a>
+        <a class = "Link" href="./index.html"><h1 id = "SongBase" >Песни</h1></a>
+        <a class = "Link" href="./Actor.html"><h1 id = "ActorBase" >Исполнитель</h1></a>
         <img id = "logo" src = '' width="10" height="10">
     </div>
+</head>
+<body>
+<div class="preloader">
+<div class = "Main">
     <div id = "Content" class = "Content">
+        <div class = "SongList">
+            <ul>
+                <li onclick="choose_song('Зоопарк')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - великолепна"> Зоопарк </span></li>
+                <li onclick="choose_song('Всё идёт по плану')">         <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - культовая">Всё идёт по плану</span></li>
+                <li onclick="choose_song('Всё как у людей')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - в самое сердце">Всё как у людей</span></li>
+                <li onclick="choose_song('Моя оборона')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - легендарна">Моя оборона</span></li>
+                <li onclick="choose_song('Самоотвод')">                 <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - прекрасна">Самоотвод</span></li>
+                <li onclick="choose_song('Свобода')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1996г - пронзительная">Свобода</span></li>
+                <li onclick="choose_song('Про дурачка')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - проникновенная">Про дурачка</span></li>
+                <li onclick="choose_song('Пой, революция!')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - революционна">Пой, революция!</span></li>
+                <li onclick="choose_song('Долгая счастливая жизнь')">   <span class="hint  hint--left  hint--large" aria-label="Написана в 2004г - до слёз">Долгая счастливая жизнь</span></li>
+                <li onclick="choose_song('Сияние')">                    <span class="hint  hint--left   hint--large" aria-label="Написана в 2007г - глубокая">Сияние</span></li>
+            </ul>
+        </div>
         <div class = "Information">
             <div class = "SongBox">
-            <div class = "Title"><h1 id = "SongName">Моя оборона</h1></div>
+            <div class = "Title"><h1 id = "SongName">Название Песни</h1></div>
             <div class = "SongPlay">
                 <audio id = "SongAudio" controls src ="https://docs.google.com/uc?id=1MJz3Nf0zhecDOR03UWgN3ppnRw6OgdIH"></audio>
             </div>
@@ -71,24 +86,34 @@
                     <button type="button" onclick="SongSearch()"> Поиск </button>
                 </form>
             </div>
-            <div class = "SongList">
-                <ul>
-                    <li onclick="choose_song('Зоопарк')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - великолепна"> Зоопарк </span></li>
-                    <li onclick="choose_song('Всё идёт по плану')">         <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - культовая">Всё идёт по плану</span></li>
-                    <li onclick="choose_song('Всё как у людей')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - в самое сердце">Всё как у людей</span></li>
-                    <li onclick="choose_song('Моя оборона')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - легендарна">Моя оборона</span></li>
-                    <li onclick="choose_song('Самоотвод')">                 <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - прекрасна">Самоотвод</span></li>
-                    <li onclick="choose_song('Свобода')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1996г - пронзительная">Свобода</span></li>
-                    <li onclick="choose_song('Про дурачка')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - проникновенная">Про дурачка</span></li>
-                    <li onclick="choose_song('Пой, революция!')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - революционна">Пой, революция!</span></li>
-                    <li onclick="choose_song('Долгая счастливая жизнь')">   <span class="hint  hint--left  hint--large" aria-label="Написана в 2004г - до слёз">Долгая счастливая жизнь</span></li>
-                    <li onclick="choose_song('Сияние')">                    <span class="hint  hint--left   hint--large" aria-label="Написана в 2007г - глубокая">Сияние</span></li>
-                </ul>
+            <div class="wrapper">
+                <div>One</div>
+                <div>Two</div>
+                <div>Three</div>
+                <div>Four</div>
+                <div>Five</div>
+                <div>Six</div>
             </div>
         </div>
     </div>
     <div id = "timer"></div>
 </div>
-
+</div>
+<div class="preloader-1">
+    <svg>
+        <g>
+            <path d="M 50,100 A 1,1 0 0 1 50,0"/>
+        </g>
+        <g>
+            <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
+        </g>
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#BFE2FF;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#337AB7;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
 </body>
 </html>

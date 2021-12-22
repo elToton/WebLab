@@ -6,7 +6,9 @@ window.onload = function () {
 }
 var Songs = new Map();
 
-
+window.onload = function() {
+    document.querySelector('.preloader-1').classList.add("preloader-1-remove");
+};
 
 window.addEventListener('load',function () {
 
@@ -44,6 +46,8 @@ function SongSearch()
     let input = document.getElementById('SongInput').value
     if (Songs.get(input) != null) choose_song(input)
     else alert('Такой песни мы не знаем')
+
+    localStorage.setItem('Last Search',input)
 
 }
 
