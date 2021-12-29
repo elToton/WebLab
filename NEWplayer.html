@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Пластмассовый мир победил...</title>
+    <script type="module" src="Script.js"></script>
+    <div class="Navigation">
+        <a class = "Link" href="./Actor.html"><h1 id = "ActorBase" >Исполнитель</h1></a>
+        <a class = "Link" href="./NEWplayer.html"><h1 id = "NP" >Плеер</h1></a>
+        <a class = "Link" href="./Song.html"><h1 id = "SongBase" >Песни</h1></a>
+        <a class = "Link" href="./Gallery.html"><h1 id = "Gallery" >Галерея</h1></a>
+        <a class = "Link" href="./Baza.html"><h1 id = "Base" >Объяснение парадокса</h1></a>
+        <img id = "logo" src = '' width="10" height="10">
+    </div>
+</head>
+<body>
+<div class = "Main">
+<div id = "Content" class = "Content">
+
+    <div class = "SongPlay">
+        <div id="single-song-player">
+            <div class="bottom-container">
+                <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress">
+                </progress>
+
+                <div class="control-container">
+                    <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause">
+                    </div>
+
+                    <div class="meta-container">
+					 <span amplitude-song-info="name" amplitude-main-song-info="true" class="song-name">
+					 </span>
+                        <span amplitude-song-info="artist" amplitude-main-song-info="true">
+					 </span>
+                    </div>
+
+                    <div class="logo">
+                        <a href="http://player.balamii.com/" target="_blank">
+                            <img src="https://d3fc22kf489ohb.cloudfront.net/img/logo/original/59a7ce7b4e6a2-59a7ce7b4ea4a.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Amplitude.js -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@3.2.3/dist/amplitude.min.js"></script>
+    </div>
+</div>
+    <div id = "timer"></div>
+</div>
+
+
+<div class="preloader-1">
+    <svg>
+        <g>
+            <path d="M 50,100 A 1,1 0 0 1 50,0"/>
+        </g>
+        <g>
+            <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
+        </g>
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#BFE2FF;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#337AB7;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
+</body>
+</html>

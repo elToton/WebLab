@@ -3,102 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css">
     <title>Пластмассовый мир победил...</title>
-    <script src="Script.js"></script>
+    <script type="module" src="Script.js"></script>
     <div class="Navigation">
-        <a class = "Link" href="./index.html"><h1 id = "SongBase" >Песни</h1></a>
         <a class = "Link" href="./Actor.html"><h1 id = "ActorBase" >Исполнитель</h1></a>
+        <a class = "Link" href="./NEWplayer.html"><h1 id = "NP" >Плеер</h1></a>
+        <a class = "Link" href="./Song.html"><h1 id = "SongBase" >Песни</h1></a>
+        <a class = "Link" href="./Gallery.html"><h1 id = "Gallery" >Галерея</h1></a>
+        <a class = "Link" href="./Baza.html"><h1 id = "Base" >Объяснение парадокса</h1></a>
         <img id = "logo" src = '' width="10" height="10">
     </div>
 </head>
 <body>
-<div class="preloader">
 <div class = "Main">
     <div id = "Content" class = "Content">
-        <div class = "SongList">
-            <ul>
-                <li onclick="choose_song('Зоопарк')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - великолепна"> Зоопарк </span></li>
-                <li onclick="choose_song('Всё идёт по плану')">         <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - культовая">Всё идёт по плану</span></li>
-                <li onclick="choose_song('Всё как у людей')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - в самое сердце">Всё как у людей</span></li>
-                <li onclick="choose_song('Моя оборона')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - легендарна">Моя оборона</span></li>
-                <li onclick="choose_song('Самоотвод')">                 <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - прекрасна">Самоотвод</span></li>
-                <li onclick="choose_song('Свобода')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1996г - пронзительная">Свобода</span></li>
-                <li onclick="choose_song('Про дурачка')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - проникновенная">Про дурачка</span></li>
-                <li onclick="choose_song('Пой, революция!')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - революционна">Пой, революция!</span></li>
-                <li onclick="choose_song('Долгая счастливая жизнь')">   <span class="hint  hint--left  hint--large" aria-label="Написана в 2004г - до слёз">Долгая счастливая жизнь</span></li>
-                <li onclick="choose_song('Сияние')">                    <span class="hint  hint--left   hint--large" aria-label="Написана в 2007г - глубокая">Сияние</span></li>
-            </ul>
-        </div>
-        <div class = "Information">
-            <div class = "SongBox">
-            <div class = "Title"><h1 id = "SongName">Название Песни</h1></div>
-            <div class = "SongPlay">
-                <audio id = "SongAudio" controls src ="https://docs.google.com/uc?id=1MJz3Nf0zhecDOR03UWgN3ppnRw6OgdIH"></audio>
-            </div>
-            <div id = "SongText" class = "SongText">
-                <p>
-                Пластмассовый мир победил
-                Макет оказался сильней
-                Последний кораблик остыл
-                Последний фонарик устал,
-                а в горле сопят комья воспоминаний
-                </p>
-                <p>
-                Оо- моя оборона
-                Солнечный зайчик стеклянного глаза
-                Оо- моя оборона
-                Траурный мячик нелепого мира
-                Траурный мячик дешёвого мира
-                </p>
-                <p>
-                Пластмассовый мир победил.
-                Ликует картонный набат-
-                кому нужен ломтик июльского неба?
-                </p>
-                <p>
-                Оо- моя оборона
-                Солнечный зайчик незрячего мира
-                Оо- моя оборона
-                Траурный мячик стеклянного глаза
-                Траурный зайчик нелепого мира...
-                </p>
-                <p>
-                Пластмассовый мир победил
-                Макет оказался сильней
-                Последний кораблик остыл
-                Последний фонарик устал,
-                а в горле сопят комья воспоминаний.
-                </p>
-                <p>
-                Оо- моя оборона
-                Траурный мячик незрячего мира
-                Оо- моя оборона
-                Солнечный зайчик стеклянного глаза.
-                </p>
-                Оо- моя оборона!</div>
-            </div>
-        </div>
-        <div class = "Songs">
-            <div class = "SongSearch">
-                <form>
-                    <input id = "SongInput" type="text">
-                    <button type="button" onclick="SongSearch()"> Поиск </button>
-                </form>
-            </div>
-            <div class="wrapper">
-                <div>One</div>
-                <div>Two</div>
-                <div>Three</div>
-                <div>Four</div>
-                <div>Five</div>
-                <div>Six</div>
+
+        <div style="text-align: center">
+            <img src="https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkTB68E2HeV1q4LjtwW8FE5qaKTM5SRkZCeTgDn6uOyic"  title="Егор Летов (Игорь Федорович Летов)">
+
+            <div class = "Hello_Legend">
+            <h1>Егор Летов (1964 - 2008)</h1>
+
+                <article>
+                    «Ко всем ура-националистическим движениям мы не имели и не имеем отношения самым решительным и активнейшим образом. Мы патриоты, но не нацисты.
+                    <br>
+                    Приходится констатировать, что сегодня повсеместно наблюдается даже не рождение, а тотальное, агрессивное наступление ФАШИЗМА — не цветасто-отвлеченно-героического,
+                    но самого натурального, крысиного, насекомого, который мы уже в свое время испытали на собственной жопе. Каждый нелюбитель маршировать в ногу с кем бы то ни было,
+                    каждый, кто САМ, каждый, кто ЖИВ — борись с ним как можешь на любом участке пространства, пока еще не окончательно поздно, не стой в тупом наблюдении
+                    и раззявой печали. Все же тоталитаристы — правые, левые, всех цветов и мастей —
+                    <strong>ИДИТЕ НА ***</strong>
+                    !
+                    <br>
+                    Убедительная просьба больше не ассоциировать с нашей деятельностью вашу вонь».
+                </article>
             </div>
         </div>
     </div>
     <div id = "timer"></div>
 </div>
-</div>
+
+
 <div class="preloader-1">
     <svg>
         <g>

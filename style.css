@@ -1,29 +1,51 @@
 body {
     background-image: url(https://images.ru.prom.st/313489782_w640_h640_flizelinovye-fotooboi-derevya.jpg);
     background-size: 100%;
-    background-repeat: no-repeat;
-    font-size: 1vh;
-    font-family: "Arial Black";
+
+    font-size: 1.3vh;
+    font-family: 'Shizuru', cursive;;
     font-weight: normal;
     text-indent: 1px;
     letter-spacing: 1px;
     text-decoration-style: wavy;
     text-transform: capitalize;
-
-
+    z-index: 100;
+    opacity: 30;
 
 }
-#ActorBase:hover
+img
+{
+    object-fit: cover;
+}
+.Comment
+{
+    background: black;
+    border: solid white;
+    margin-left: 38%;
+    width: 20vw;
+    color: white;
+}
+
 {
     text-transform: uppercase ;
 
 }
 #SongBase:hover
 {
-    color: gray;
+    text-transform: uppercase ;
 }
-
-
+#NP:hover
+{
+    text-transform: uppercase ;
+}
+#Gallery:hover
+{
+    text-transform: uppercase ;
+}
+#Base:hover
+{
+    text-transform: uppercase ;
+}
 .flex-container
 {
     display: flex;
@@ -45,12 +67,9 @@ body {
 .SongList
 {
     width: 90%;
-
-}
-.wrapper
-{
     display: grid;
-    grid-template-columns: 2vw 2vw 2vw;
+    grid-template-columns: 10vw 8vw;
+
 }
 
 .Navigation
@@ -79,7 +98,7 @@ a {
 }
 a:visited
 {
-    color:white
+    color:white;
 }
 
 .Content {
@@ -133,7 +152,7 @@ img
 
 .Way_of_Legend
 {
-    color: white;
+    color: floralwhite;
     position: relative;
     font-size: 90% ;
     margin: 2vw;
@@ -141,9 +160,18 @@ img
     float: left;
     height: 30vh;
     width: 55vw;
+}
 
-
-
+.Hello_Legend
+{
+    color: floralwhite;
+    position: relative;
+    font-size: 100% ;
+    margin: 1vw;
+    display: inline-block;
+    float: inside;
+    height: 15vh;
+    width: 45vw;
 }
 
 article {
@@ -201,7 +229,7 @@ article {
     text-align: left;
     font-size: 90%;
 
-    width: 15vw;
+    width: 10vw;
     height: 80vh;
 }
 .Songs:hover
@@ -223,10 +251,40 @@ li:hover
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1800px) {
+@media screen and (max-width: 1200px) {
     .Image_of_Legend{
         display: none;
     }
+    #SongAudio
+    {
+        display: none;
+    }
+    .Songs
+    {
+
+        color: white;
+
+        float: right;
+        display: inline-block;
+
+        text-align: left;
+        font-size: 90%;
+
+        width: 40vw;
+        height: 40vh;
+    }
+
+}
+@media screen and (max-width: 700px) {
+
+
+}
+
+@media screen and (max-height: 500px) {
+.Navigation
+{
+    font-size: 1.3vh;
+}
 
 }
 
@@ -295,4 +353,102 @@ li:hover
         stroke-dasharray: 156px 157px;
         stroke-dashoffset: -156px;
     }
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,700,900);
+
+
+
+div#single-song-player div.bottom-container {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 13vw;
+    position: absolute;
+    width: 60vw;
+}
+div#single-song-player div.bottom-container progress.amplitude-song-played-progress:not([value]) {
+    background-color: #fff;
+}
+div#single-song-player div.bottom-container progress.amplitude-song-played-progress {
+    background-color: #fff;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    z-index: -100;
+}
+div#single-song-player div.bottom-container progress[value]::-webkit-progress-bar {
+    background-color: #fff;
+}
+div#single-song-player div.bottom-container progress[value]::-moz-progress-bar {
+    background-color: #CD1E16;
+}
+div#single-song-player div.bottom-container progress[value]::-webkit-progress-value {
+    background-color: #ff0000;
+}
+div#single-song-player div.bottom-container div.control-container {
+    margin-top: 1%;
+    padding-bottom: 3%;
+}
+div#single-song-player div.bottom-container div.control-container div.amplitude-play-pause {
+    width: 2.2vw;
+    height: 3vw;
+    cursor: pointer;
+    float: left;
+    margin-left: 7%;
+    margin-top: 2%;
+}
+div#single-song-player div.bottom-container div.control-container div.amplitude-play-pause:hover {
+    opacity: .8;
+}
+.logo img {
+    width: 10%;
+    height: auto;
+    cursor: pointer;
+    position: absolute;
+    right: 7%;
+    top: 33%;
+}
+div#single-song-player div.bottom-container div.control-container div.amplitude-play-pause.amplitude-paused {
+    background: url('https://res.cloudinary.com/dfiwfoxwx/image/upload/v1549657317/Life%20Coach/play.png');
+    background-size: cover;
+}
+div#single-song-player div.bottom-container div.control-container div.amplitude-play-pause.amplitude-playing {
+    background: url('https://res.cloudinary.com/dfiwfoxwx/image/upload/v1549657317/Life%20Coach/pause.png');
+    background-size: cover;
+}
+div#single-song-player div.bottom-container div.control-container div.meta-container {
+    float: none;
+    width: calc(100% - 84px);
+    text-align: left;
+    color: #000;
+    margin-top: 7%;
+    padding-left: 19%;
+}
+div#single-song-player div.bottom-container div.control-container div.meta-container span[amplitude-song-info="name"] {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000;
+    display: block;
+}
+div#single-song-player div.bottom-container div.control-container div.meta-container span[amplitude-song-info="artist"] {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 2vw;
+    text-transform: uppercase;
+    color: #000;
+    display: block;
+}
+div#single-song-player div.bottom-container div.control-container:after {
+    content: "";
+    display: table;
+    clear: both;
 }

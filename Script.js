@@ -1,9 +1,9 @@
 
-
-window.startTime = (new Date).getTime();
-window.onload = function () {
+(function () {
+    window.startTime = (new Date).getTime();
     console.log((new Date).getTime() - window.startTime);
-}
+})();
+
 var Songs = new Map();
 
 window.onload = function() {
@@ -15,27 +15,74 @@ window.addEventListener('load',function () {
 
 
     let timer = ((new Date).getTime() - window.startTime)/1000
+    console.log(timer)
     document.getElementById("timer").innerHTML= "Load time: "+timer+"c";
 
     SongsSet()
 
-    let Photos = getPhoto()
-    Photos.then((Array) =>{
-        let url = Array[1].url
+    let seed = Math.floor(Math.random() * 10);
+
+    let Photos = getPhoto(seed)
+    console.log(Photos)
+    Photos.then((Photos) =>{
+        let url = Photos
         let a = document.getElementById('logo')
-            a.src = "url(" + url + ")";
+            a.src = url;
 
     } )
 
-    if (document.location.href == 'http://localhost:63342/untitled9/Actor.html')
-    {
+    let Comment = getComment(seed)
+    console.log(Comment)
+    Comment.then((Comment) =>{
+        let сom = Comment
+        let a = document.getElementById('comments')
+        a.innerHTML = сom;
 
-        document.getElementById("Content").style.background = 'black';
-    }
-    else
-    {
+    } )
 
+    if (document.location.href == 'http://localhost:63342/Letov/untitled9/Actor.html')
+    {
+        document.getElementById("ActorBase").style.background = 'red';
     }
+    if (document.location.href == 'http://localhost:63342/Letov/untitled9/Song.html')
+    {
+        document.getElementById("SongBase").style.background = 'red';
+    }
+    if (document.location.href == 'http://localhost:63342/Letov/untitled9/NEWplayer.html')
+    {
+        document.getElementById("SongBase").style.background = 'red';
+    }
+
+    let songN = localStorage.getItem('SS');
+    if (songN != null) {
+        let url = Songs.get(songN)[0]
+
+        Amplitude.init({
+            "bindings": {
+                37: 'prev',
+                39: 'next',
+                32: 'play_pause'
+            },
+            "songs": [
+                {
+                    "name": songN,
+                    "artist": "Letov",
+                    "url": url,
+                },
+
+            ]
+        });
+    }
+    window.onkeydown = function(e) {
+        return !(e.keyCode == 32);
+    };
+
+    document.getElementById('song-played-progress').addEventListener('click', function( e ){
+        var offset = this.getBoundingClientRect();
+        var x = e.pageX - offset.left;
+
+        Amplitude.setSongPlayedPercentage( ( parseFloat( x ) / parseFloat( this.offsetWidth) ) * 100 );
+    });
 
 
 },false)
@@ -50,10 +97,17 @@ function SongSearch()
     localStorage.setItem('Last Search',input)
 
 }
+function Com()
+{
+    let c = document.getElementById('ComInput').value;
+    let a = document.getElementById('comments').innerHTML = c;
+
+}
 
 function choose_song(song_name)
 {
     SongsSet()
+    localStorage.setItem('SS', song_name)
     if (Songs.get(song_name) != null)
     {
         document.getElementById('SongName').innerHTML = song_name
@@ -412,17 +466,31 @@ function SongsSet()
 
 }
 
-async function getPhoto() {
+async function getPhoto(num) {
 
-    const url = "https://jsonplaceholder.typicode.com/photos";
+    const url = "https://jsonplaceholder.typicode.com/photos/"+num;
 
     try {
         const response = await fetch(url);
         let data = await response.json()
         console.log(data.url)
 
-        return data;
+        return data.url;
     } catch (error) {
-        alert('Ошибка при получении юзеров');
+        alert('Ошибка при получении фото');
+    }
+}
+async function getComment(num) {
+
+    const url = "https://jsonplaceholder.typicode.com/comments?id=1";
+
+    try {
+        const response = await fetch(url);
+        let data =  await response.json();
+        console.log(data[0].body);
+
+        return data[0].body;
+    } catch (error) {
+        alert('Ошибка при получении коммента');
     }
 }
