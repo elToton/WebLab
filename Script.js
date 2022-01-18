@@ -5,6 +5,8 @@
 })();
 
 var Songs = new Map();
+var Comments = new Array();
+var CommentNumber = 0;
 
 window.onload = function() {
     document.querySelector('.preloader-1').classList.add("preloader-1-remove");
@@ -17,6 +19,9 @@ window.addEventListener('load',function () {
     let timer = ((new Date).getTime() - window.startTime)/1000
     console.log(timer)
     document.getElementById("timer").innerHTML= "Load time: "+timer+"c";
+
+
+
 
     SongsSet()
 
@@ -31,24 +36,16 @@ window.addEventListener('load',function () {
 
     } )
 
-    let Comment = getComment(seed)
-    console.log(Comment)
-    Comment.then((Comment) =>{
-        let сom = Comment
-        let a = document.getElementById('comments')
-        a.innerHTML = сom;
 
-    } )
-
-    if (document.location.href == 'http://localhost:63342/Letov/untitled9/Actor.html')
+    if (document.location.href === 'http://localhost:63342/Letov/untitled9/Actor.html')
     {
         document.getElementById("ActorBase").style.background = 'red';
     }
-    if (document.location.href == 'http://localhost:63342/Letov/untitled9/Song.html')
+    if (document.location.href === 'http://localhost:63342/Letov/untitled9/Song.html')
     {
         document.getElementById("SongBase").style.background = 'red';
     }
-    if (document.location.href == 'http://localhost:63342/Letov/untitled9/NEWplayer.html')
+    if (document.location.href === 'http://localhost:63342/Letov/untitled9/NEWplayer.html')
     {
         document.getElementById("SongBase").style.background = 'red';
     }
@@ -74,7 +71,7 @@ window.addEventListener('load',function () {
         });
     }
     window.onkeydown = function(e) {
-        return !(e.keyCode == 32);
+        return !(e.keyCode === 32);
     };
 
     document.getElementById('song-played-progress').addEventListener('click', function( e ){
@@ -88,6 +85,16 @@ window.addEventListener('load',function () {
 },false)
 
 
+    (function () {
+
+        document.getElementById('ComInput').addEventListener('keydown', function (e) {
+            if (e.keyCode === 13) {
+                    Com();
+            }
+        });
+
+    })();
+
 function SongSearch()
 {
     let input = document.getElementById('SongInput').value
@@ -99,8 +106,31 @@ function SongSearch()
 }
 function Com()
 {
+
+
     let c = document.getElementById('ComInput').value;
-    let a = document.getElementById('comments').innerHTML = c;
+    console.log("1BBB " + c);
+    c = "<p>" +(CommentNumber + 1) + "." + c + "</p> ";
+    console.log("2BBB " + c);
+    c = document.getElementById('comments').innerHTML + c;
+    console.log("3BBB " + c);
+
+
+    CommentNumber = CommentNumber + 1;
+
+
+
+
+    console.log("BBB " + c);
+
+    console.log(CommentNumber);
+    console.log(Comments);
+
+    console.log("AAA " + c);
+
+
+
+    document.getElementById('comments').innerHTML = c ;
 
 }
 

@@ -1,9 +1,9 @@
 body {
     background-image: url(https://images.ru.prom.st/313489782_w640_h640_flizelinovye-fotooboi-derevya.jpg);
-    background-size: 100%;
+    background-size: cover;
 
+    font-family: 'Shizuru', cursive;
     font-size: 1.3vh;
-    font-family: 'Shizuru', cursive;;
     font-weight: normal;
     text-indent: 1px;
     letter-spacing: 1px;
@@ -13,6 +13,12 @@ body {
     opacity: 30;
 
 }
+#someImg
+{
+    display: none;
+}
+
+
 img
 {
     object-fit: cover;
@@ -29,6 +35,11 @@ img
 {
     text-transform: uppercase ;
 
+}
+
+#ActorBase:hover
+{
+    text-transform: uppercase ;
 }
 #SongBase:hover
 {
@@ -81,6 +92,7 @@ img
     margin-left: 10vw;
     text-align: center;
     border: solid white;
+    overflow: scroll;
 
 }
 li
@@ -101,10 +113,11 @@ a:visited
     color:white;
 }
 
+
 .Content {
 
     background: url(https://forpost-sz.ru/sites/default/files/doc/2018/01/01/nrpngao.jpeg);
-    background-repeat: no-repeat;
+    background-repeat: round ;
     background-size: 100%;
     float: left;
     display: block;
@@ -117,14 +130,37 @@ a:visited
     opacity: 90%;
     backdrop-filter: drop-shadow(40px 40px 50px #ff0000);
 }
+.Gallery
+{
+    overflow: visible;
+}
+.ImageLegend
+{
+
+
+}
+.ImageLegend img
+{
+    width: 15vh;
+    height: 30vh;
+    position: relative ;
+    margin: 2vw;
+
+    float: left;
+
+    margin-bottom: 10%;
+
+
+    opacity: 90%;
+}
 
 .Image_of_Legend
 {
     position: relative ;
     margin: 2vw;
     float: left;
-    width: 15vw;
-    height: 20vh;
+    width: 1.5vw;
+    height: 2.0vh;
     margin-bottom: 10%;
 
     display: flex;
@@ -226,7 +262,7 @@ article {
     float: right;
     display: inline-block;
 
-    text-align: left;
+    text-align: center;
     font-size: 90%;
 
     width: 10vw;
@@ -251,6 +287,13 @@ li:hover
     text-decoration: underline;
 }
 
+.link:active
+{
+    color: black;
+}
+
+
+
 @media screen and (max-width: 1200px) {
     .Image_of_Legend{
         display: none;
@@ -267,23 +310,44 @@ li:hover
         float: right;
         display: inline-block;
 
-        text-align: left;
+        text-align: center;
         font-size: 90%;
 
         width: 40vw;
         height: 40vh;
     }
+    .SongBox
+    {
+        width: 50vw;
+    }
+    .SongList
+    {
+        width: 30vw;
+    }
+    span
+    {
+        width: 30vw;
+    }
+
+    .SongText
+    {
+
+        font-size: 90%;
+        margin: 30%;
+        margin-right: 3.5%;
+        width: 20vw;
+        text-align: center;
+
+    }
 
 }
-@media screen and (max-width: 700px) {
 
 
-}
-
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 800px) {
 .Navigation
 {
     font-size: 1.3vh;
+    height: 20vh;
 }
 
 }

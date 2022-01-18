@@ -10,16 +10,18 @@
     <title>Пластмассовый мир победил...</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
     <script src="Script.js"></script>
-    <div class="Navigation">
-        <a class = "Link" href="./Actor.html"><h1 id = "ActorBase" >Исполнитель</h1></a>
-        <a class = "Link" href="./NEWplayer.html"><h1 id = "NP" >Плеер</h1></a>
-        <a class = "Link" href="./Song.html"><h1 id = "SongBase" >Песни</h1></a>
-        <a class = "Link" href="./Gallery.html"><h1 id = "Gallery" >Галерея</h1></a>
-        <a class = "Link" href="./Baza.html"><h1 id = "Base" >Объяснение парадокса</h1></a>
-        <img id = "logo" src = '' width="10" height="10">
-    </div>
+
 </head>
+
 <body>
+<div class="Navigation">
+    <a class = "Link" href="./Actor.html"><h1 id = "ActorBase" >Исполнитель</h1></a>
+    <a class = "Link" href="./NEWplayer.html"><h1 id = "NP" >Плеер</h1></a>
+    <a class = "Link" href="./Song.html"><h1 id = "SongBase" >Песни</h1></a>
+    <a class = "Link" href="./Gallery.html"><h1 id = "Gallery" >Галерея</h1></a>
+    <a class = "Link" href="./Baza.html"><h1 id = "Base" >Объяснение парадокса</h1></a>
+    <img id = "logo" src = './' width="10" height="10" alt="лого">
+</div>
 <div class="preloader">
 <div class = "Main">
     <div id = "Content" class = "Content">
@@ -27,25 +29,25 @@
         <div class = "Information">
             <div class = "Songs">
                 <div class = "SongSearch">
-                    <form>
+                    <form onsubmit="return false">
                         <input id = "SongInput" type="text">
                         <button type="button" onclick="SongSearch()"> Поиск </button>
                     </form>
                     <div class = "SongList">
                         <ul>
-                            <li onclick="choose_song('Зоопарк')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - великолепна"> Зоопарк </span></li>
-                            <li onclick="choose_song('Всё идёт по плану')">         <span class="hint  hint--left  hint--large" aria-label="Написана в 1985г - культовая">Всё идёт по плану</span></li>
-                            <li onclick="choose_song('Всё как у людей')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - в самое сердце">Всё как у людей</span></li>
-                            <li onclick="choose_song('Моя оборона')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - легендарна">Моя оборона</span></li>
-                            <li onclick="choose_song('Самоотвод')">                 <span class="hint  hint--left  hint--large" aria-label="Написана в 1989г - прекрасна">Самоотвод</span></li>
-                            <li onclick="choose_song('Свобода')">                   <span class="hint  hint--left  hint--large" aria-label="Написана в 1996г - пронзительная">Свобода</span></li>
-                            <li onclick="choose_song('Про дурачка')">               <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - проникновенная">Про дурачка</span></li>
-                            <li onclick="choose_song('Пой, революция!')">           <span class="hint  hint--left  hint--large" aria-label="Написана в 1997г - революционна">Пой, революция!</span></li>
-                            <li onclick="choose_song('Долгая счастливая жизнь')">   <span class="hint  hint--left  hint--large" aria-label="Написана в 2004г - до слёз">Долгая счастливая жизнь</span></li>
-                            <li onclick="choose_song('Сияние')">                    <span class="hint  hint--left   hint--large" aria-label="Написана в 2007г - глубокая">Сияние</span></li>
+                            <li onclick="choose_song('Зоопарк')">                   <span class="hint  hint--up  hint--large" aria-label="Написана в 1985г - великолепна"> Зоопарк </span></li>
+                            <li onclick="choose_song('Всё идёт по плану')">         <span class="hint  hint--up  hint--large" aria-label="Написана в 1985г - культовая">Всё идёт по плану</span></li>
+                            <li onclick="choose_song('Всё как у людей')">           <span class="hint  hint--up  hint--large" aria-label="Написана в 1989г - в самое сердце">Всё как у людей</span></li>
+                            <li onclick="choose_song('Моя оборона')">               <span class="hint  hint--up  hint--large" aria-label="Написана в 1989г - легендарна">Моя оборона</span></li>
+                            <li onclick="choose_song('Самоотвод')">                 <span class="hint  hint--up  hint--large" aria-label="Написана в 1989г - прекрасна">Самоотвод</span></li>
+                            <li onclick="choose_song('Свобода')">                   <span class="hint  hint--up  hint--large" aria-label="Написана в 1996г - пронзительная">Свобода</span></li>
+                            <li onclick="choose_song('Про дурачка')">               <span class="hint  hint--up  hint--large" aria-label="Написана в 1997г - проникновенная">Про дурачка</span></li>
+                            <li onclick="choose_song('Пой, революция!')">           <span class="hint  hint--up  hint--large" aria-label="Написана в 1997г - революционна">Пой, революция!</span></li>
+                            <li onclick="choose_song('Долгая счастливая жизнь')">   <span class="hint  hint--up  hint--large" aria-label="Написана в 2004г - до слёз">Долгая счастливая жизнь</span></li>
+                            <li onclick="choose_song('Сияние')">                    <span class="hint  hint--up   hint--large" aria-label="Написана в 2007г - глубокая">Сияние</span></li>
                         </ul>
                     </div>
-                    <form>
+                    <form onsubmit="Com(); return false">
                         <input id = "ComInput" type="text">
                         <button type="button" onclick="Com()"> Коммент </button>
                     </form>
@@ -114,8 +116,8 @@
         </g>
         <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#BFE2FF;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#337AB7;stop-opacity:1" />
+                <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#CD1E16;stop-opacity:1" />
             </linearGradient>
         </defs>
     </svg>
