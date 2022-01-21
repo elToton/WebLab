@@ -32,6 +32,24 @@ img
     color: white;
 }
 
+.LocalSearchResult
+{
+    background: black;
+    border: solid white;
+    margin-left: 38%;
+    width: 20vw;
+    color: white;
+}
+
+.SessionSearchResult
+{
+    background: black;
+    border: solid white;
+    margin-left: 38%;
+    width: 20vw;
+    color: white;
+}
+
 {
     text-transform: uppercase ;
 

@@ -29,10 +29,13 @@
         <div class = "Information">
             <div class = "Songs">
                 <div class = "SongSearch">
-                    <form onsubmit="return false">
+                    <form onsubmit="SongSearch(); return false">
                         <input id = "SongInput" type="text">
                         <button type="button" onclick="SongSearch()"> Поиск </button>
                     </form>
+
+                    <button type="button" onclick="ClearSearch()"> Очистить </button>
+
                     <div class = "SongList">
                         <ul>
                             <li onclick="choose_song('Зоопарк')">                   <span class="hint  hint--up  hint--large" aria-label="Написана в 1985г - великолепна"> Зоопарк </span></li>
@@ -97,6 +100,10 @@
                 Солнечный зайчик стеклянного глаза.
                 </p>
                 Оо- моя оборона!</div>
+            </div>
+            <div class="LocalSearchResult" id="localResults">
+            </div>
+            <div class="SessionSearchResult" id="sessionResults">
             </div>
             <div class="Comment" id="comments">
             </div>

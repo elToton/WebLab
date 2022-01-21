@@ -7,6 +7,8 @@
 var Songs = new Map();
 var Comments = new Array();
 var CommentNumber = 0;
+var iLocal = 0;
+var iSession = 0;
 
 window.onload = function() {
     document.querySelector('.preloader-1').classList.add("preloader-1-remove");
@@ -54,21 +56,22 @@ window.addEventListener('load',function () {
     if (songN != null) {
         let url = Songs.get(songN)[0]
 
-        Amplitude.init({
-            "bindings": {
-                37: 'prev',
-                39: 'next',
-                32: 'play_pause'
-            },
-            "songs": [
-                {
-                    "name": songN,
-                    "artist": "Letov",
-                    "url": url,
+            Amplitude.init({
+                "bindings": {
+                    37: 'prev',
+                    39: 'next',
+                    32: 'play_pause'
                 },
+                "songs": [
+                    {
+                        "name": songN,
+                        "artist": "Letov",
+                        "url": url,
+                    },
 
-            ]
-        });
+                ]
+            });
+
     }
     window.onkeydown = function(e) {
         return !(e.keyCode === 32);
@@ -84,7 +87,6 @@ window.addEventListener('load',function () {
 
 },false)
 
-
     (function () {
 
         document.getElementById('ComInput').addEventListener('keydown', function (e) {
@@ -95,19 +97,49 @@ window.addEventListener('load',function () {
 
     })();
 
+function ClearSearch()
+{
+    localStorage.clear();
+    sessionStorage.clear();
+    document.getElementById('localResults').innerHTML = null;
+    document.getElementById('sessionResults').innerHTML = null;
+}
+
 function SongSearch()
 {
-    let input = document.getElementById('SongInput').value
-    if (Songs.get(input) != null) choose_song(input)
-    else alert('Такой песни мы не знаем')
+    let input = document.getElementById('SongInput').value;
+    let local;
+    let session;
+    if (Songs.get(input) != null)
+    {
+        choose_song(input);
+        input = "<p>" + input + "</p> ";
+        if (localStorage.length === 1) local = input;
+        else local = localStorage.getItem('LastSearch') + input;
 
-    localStorage.setItem('Last Search',input)
+        if (sessionStorage.length === 0) session = input;
+        else session = sessionStorage.getItem('LastSearch') + input;
 
+        localStorage.setItem('LastSearch', local);
+        document.getElementById('localResults').innerHTML = localStorage.getItem('LastSearch');
+
+        sessionStorage.setItem('LastSearch', session);
+        document.getElementById('sessionResults').innerHTML = sessionStorage.getItem('LastSearch');
+    }
+    else
+    {
+        alert('Такой песни мы не знаем');
+        input = "<p>" + input + "</p> ";
+
+        if (sessionStorage.length === 0) session = input;
+        else session = sessionStorage.getItem('LastSearch') + input;
+
+        sessionStorage.setItem('LastSearch', session);
+        document.getElementById('sessionResults').innerHTML = sessionStorage.getItem('LastSearch');
+    }
 }
 function Com()
 {
-
-
     let c = document.getElementById('ComInput').value;
     console.log("1BBB " + c);
     c = "<p>" +(CommentNumber + 1) + "." + c + "</p> ";
@@ -115,11 +147,7 @@ function Com()
     c = document.getElementById('comments').innerHTML + c;
     console.log("3BBB " + c);
 
-
     CommentNumber = CommentNumber + 1;
-
-
-
 
     console.log("BBB " + c);
 
@@ -128,10 +156,7 @@ function Com()
 
     console.log("AAA " + c);
 
-
-
-    document.getElementById('comments').innerHTML = c ;
-
+    document.getElementById('comments').innerHTML = c;
 }
 
 function choose_song(song_name)
